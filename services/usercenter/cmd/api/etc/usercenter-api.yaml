@@ -1,0 +1,23 @@
+Name: usercenter-api
+Host: 0.0.0.0
+Port: 8888
+Mode: dev
+
+Log:
+  ServiceName: usercenter-api
+  Level: error
+  Encoding: plain
+
+
+Cache:
+  - Host: 192.168.44.129:6379
+    Pass:
+
+DB:
+  DataSource: root:gsh@tcp(192.168.44.129:3306)/usercenter?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+UserRpc:
+  Etcd:
+    Hosts:
+      - 192.168.44.129:2379
+    Key: usercenter.rpc

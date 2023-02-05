@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "../pb";
+
+package desc;
+
+//model
+message User {
+  int64 Id = 1;
+  string Uuid = 2;
+  int64 DelState = 3;
+  string Version = 4;
+  string Mobile = 5;
+  string Email = 6;
+  string Nickname = 7;
+  string Name = 8;
+  int64 Sex = 9;
+  string Avatar = 10;
+  string Info = 11;
+  string Interest = 12;
+  string Extra = 13;
+}
+
+
+message LoginReq {
+  string  authType = 1;
+  string  authKey = 2;
+  string  password = 3;
+}
+
+message LoginResp {
+  string accessToken = 1;
+  int64  accessExpire = 2;
+  int64  refreshAfter = 3;
+}
+
+//service
+service usercenter {
+  rpc login(LoginReq) returns(LoginResp);
+}

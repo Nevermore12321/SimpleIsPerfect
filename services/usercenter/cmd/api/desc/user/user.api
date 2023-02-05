@@ -1,0 +1,37 @@
+syntax = "v1"
+
+info (
+    title:  "User Center Service"
+    desc:   "User Center Service"
+    author: "Shaohe Guo"
+    email:  "842125706@qq.com"
+)
+
+type User {
+    Id       	int64  `json:"id"`
+    Uuid        string `json:"uuid"`
+    DelState    int64  `json:"del_state""`
+    Version     string `json:"version"`
+    Mobile   	string `json:"mobile"   `
+    Email	 	string `json:"email"`
+    Nickname 	string `json:"nickname"`
+    Name	 	string `json:"name"`
+    Sex      	int64  `json:"sex"`
+    Avatar   	string `json:"avatar"`
+    Info     	string `json:"info"`
+    Interest	string `json:"interest"`
+    Extra		string `json:"extra"`
+}
+
+
+type (
+    LoginReq {
+        Name     string `json:"name"`
+        Password string `json:"password"`
+    }
+    LoginResp {
+        AccessToken  string `json:"accessToken"`
+        AccessExpire int64  `json:"accessExpire"`
+        RefreshAfter int64  `json:"refreshAfter"`
+    }
+)

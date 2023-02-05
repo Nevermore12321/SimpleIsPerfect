@@ -1,0 +1,12 @@
+Name: usercenter.rpc
+ListenOn: 0.0.0.0:8080
+#mode: dev
+Etcd:
+  Hosts:
+  - 192.168.44.129:2379
+  Key: usercenter.rpc
+
+Log:
+  ServiceName: usercenter-rpc
+  Level: info
+  Encoding: plain
